@@ -1,6 +1,10 @@
 name: Python CI
 
-env:
+permissions:
+  contents: read
+
+
+env: 
   APP_ENV: testing
 
 on:
