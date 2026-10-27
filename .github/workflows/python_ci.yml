@@ -1,5 +1,7 @@
 name: Python CI
 
+env:
+  APP_ENV: testing
 
 on:
 
@@ -27,6 +29,12 @@ jobs:
         with:
 
           python-version: '3.11'
+
+
+      - name: Show environment
+
+        run: echo "Current environment is $APP_ENV"
+
 
       - name: Install dependencies
 
