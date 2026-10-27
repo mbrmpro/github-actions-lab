@@ -36,6 +36,19 @@ jobs:
         run: echo "Current environment is $APP_ENV"
 
 
+      - name: Check GitHub Secret
+
+        env:
+          MY_SECRET: ${{ secrets.MY_TEST_SECRET }}
+        run: |
+          if [ -n "$MY_SECRET" ]; then
+            echo "Secret is available"
+          else
+            echo "Secret is missing"
+            exit 1
+          fi
+
+
       - name: Install dependencies
 
         run: |
